@@ -12,5 +12,5 @@ end
 
 min_cost, route = tsp_bottom_up(distance)
 
-puts "Tur yang optimal: #{route.map { |x| x + 1 }.join(' -> ')}"
+puts "Rute optimal: #{route.map { |x| x + 1 }.join(' -> ')}"
 puts "Biaya/bobot minimum untuk mengunjungi semua kota: #{min_cost}"

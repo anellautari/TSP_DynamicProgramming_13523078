@@ -9,7 +9,7 @@ def tsp_bottom_up(distance)
   dp = Array.new(n) { Array.new(1 << n, inf) }
   parent = Array.new(n) { Array.new(1 << n, -1) }
 
-  # Tahap 1: base case
+  # tahap 1: base case
   puts "\nTahap 1:"
   (1...n).each do |i|
     dp[i][1 << i] = distance[i][0]
@@ -17,11 +17,11 @@ def tsp_bottom_up(distance)
   end
   puts
 
-  # Tahapan berikutnya
+  # tahap berikutnya
   last_subset_size = -1
 
   (1...(1 << n)).each do |mask|
-    next if (mask & 1) != 0  # jangan kunjungi kota 1
+    next if (mask & 1) != 0  # jangan kunjungin kota 1
 
     count = mask.to_s(2).count("1")
 
@@ -57,7 +57,7 @@ def tsp_bottom_up(distance)
     end
   end
 
-  # Selesaikan rute
+  # tahap akhir
   min_cost = inf
   last_city = -1
   full_mask = (1 << n) - 1
@@ -84,8 +84,6 @@ def tsp_bottom_up(distance)
   puts "                = min{#{sums.map { |s| s.split('=').last.strip }.join(', ')}}"
   puts "                = #{min_cost}\n\n"
 
-
-  # Rekonstruksi rute
   route = [0]
   mask = full_mask ^ 1
   current = last_city
