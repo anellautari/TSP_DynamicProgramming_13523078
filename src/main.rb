@@ -1,17 +1,16 @@
-require_relative 'tsp_program'
+require_relative 'tsp_bottomup'
 
-puts "Selamat datang di program TSP!"
 puts "Masukkan jumlah kota:"
 
 n = gets.to_i
-puts "Masukkan jarak antar kota (dalam format matriks pisahkan dengan spasi per baris):"
+puts "Masukkan matriks jarak antar kota (pisahkan dengan spasi):"
 distance = []
 n.times do
   row = gets.strip.split.map(&:to_i)
   distance << row
 end
 
-min_cost, route = tsp(distance)
+min_cost, route = tsp_bottom_up(distance)
 
-puts "\nBiaya minimum untuk mengunjungi semua kota: #{min_cost}"
-puts "Rute yang harus diambil: #{route.map { |x| x + 1 }.join(' -> ')}"
+puts "Tur yang optimal: #{route.map { |x| x + 1 }.join(' -> ')}"
+puts "Biaya/bobot minimum untuk mengunjungi semua kota: #{min_cost}"
