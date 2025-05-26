@@ -1,4 +1,4 @@
-require_relative 'tsp_bottomup'
+require_relative 'tsp_program'
 
 puts "Masukkan jumlah kota:"
 
@@ -10,7 +10,7 @@ n.times do
   distance << row
 end
 
-min_cost, route = tsp_bottom_up(distance)
+min_cost, route = tsp_program(distance)
 
 puts "Rute optimal: #{route.map { |x| x + 1 }.join(' -> ')}"
 puts "Biaya/bobot minimum untuk mengunjungi semua kota: #{min_cost}"
