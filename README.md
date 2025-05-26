@@ -34,6 +34,10 @@ Langkah-langkah utama program:
     ```bash
     ruby src/main.rb
     ```
+- Jika ingin memasukkan input dari file (pada folder test), gunakan:
+    ```bash
+    ruby src/main.rb < test/input.txt
+    ```
 
 3. **Masukkan input sesuai instruksi**, contoh:
     ```
