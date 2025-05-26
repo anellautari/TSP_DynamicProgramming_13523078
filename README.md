@@ -1,23 +1,23 @@
 # Traveling Salesman Problem Solver (Dynamic Programming)
-Program ini menyelesaikan permasalahan **Travelling Salesman Problem (TSP)** menggunakan pendekatan **Dynamic Programming dengan Bitmasking** dalam bahasa **Ruby**.
+Program ini menyelesaikan permasalahan **Travelling Salesman Problem (TSP)** menggunakan pendekatan **Dynamic Programming** dalam bahasa **Ruby**.
 
 ---
 
 ## Cara Kerja Program
 
-TSP (Travelling Salesman Problem) adalah masalah pencarian rute minimum untuk mengunjungi setiap kota **sekali saja**, lalu kembali ke kota asal. Program ini menyelesaikan TSP menggunakan pendekatan **Dynamic Programming Bottom-Up**.
+TSP (Travelling Salesman Problem) adalah masalah pencarian rute minimum untuk mengunjungi setiap kota sekali saja, lalu kembali ke kota asal. Program ini menyelesaikan TSP menggunakan pendekatan **Dynamic Programming Bottom-Up**.
 
 Langkah-langkah utama program:
 
-- Membangun fungsi `tsp_bottom_up(distance)` yang menerima **matriks jarak antar kota** sebagai input.
+- Membuat fungsi `tsp_program(distance)` yang menerima matriks jarak antar kota sebagai input.
 - Menggunakan **bitmasking** untuk merepresentasikan kombinasi subset kota yang telah dikunjungi.
 - Menyusun tabel `dp[i][mask]`, di mana:
   - `i` adalah kota terakhir yang dikunjungi,
-  - `mask` adalah subset kota yang telah dikunjungi (dalam bentuk bitmask),
-  - `dp[i][mask]` menyimpan **jarak minimum** dari kota awal ke `i` sambil mengunjungi semua kota dalam `mask`, lalu kembali ke asal.
-- Mengisi `dp` secara **bertingkat**, mulai dari subset kecil hingga semua kota (urutan sesuai tahap di slide).
-- Setelah selesai, program akan menentukan rute optimal dengan **menelusuri kembali** (backtrack) jalur dari kota akhir ke kota awal.
-- Program mencetak **perhitungan tiap tahap** seperti `f(i, S)`, lengkap dengan komponen biaya dan pemilihan minimum, mirip dengan yang ditampilkan pada slide presentasi kuliah.
+  - `mask` adalah subset kota yang telah dikunjungi,
+  - `dp[i][mask]` menyimpan jarak minimum dari kota awal ke `i` sambil mengunjungi semua kota dalam `mask`, lalu kembali ke asal.
+- Mengisi `dp` secara bertingkat, mulai dari subset kecil hingga semua kota (urutan sesuai tahap di slide).
+- Setelah selesai, program akan menentukan rute optimal dengan menelusuri kembali (backtrack) jalur dari kota akhir ke kota awal.
+- Program mencetak perhitungan tiap tahap, seperti `f(i, S)`, lengkap dengan rute optimal dan bobot minimal.
 
 ---
 
