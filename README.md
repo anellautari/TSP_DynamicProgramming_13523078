@@ -10,14 +10,13 @@ TSP (Travelling Salesman Problem) adalah masalah pencarian rute minimum untuk me
 Langkah-langkah utama program:
 
 - Membuat fungsi `tsp_program(distance)` yang menerima matriks jarak antar kota sebagai input.
-- Menggunakan **bitmasking** untuk merepresentasikan kombinasi subset kota yang telah dikunjungi.
 - Menyusun tabel `dp[i][mask]`, di mana:
   - `i` adalah kota terakhir yang dikunjungi,
   - `mask` adalah subset kota yang telah dikunjungi,
   - `dp[i][mask]` menyimpan jarak minimum dari kota awal ke `i` sambil mengunjungi semua kota dalam `mask`, lalu kembali ke asal.
-- Mengisi `dp` secara bertingkat, mulai dari subset kecil hingga semua kota (urutan sesuai tahap di slide).
+- Mengisi `dp` secara bertingkat, mulai dari subset kecil hingga semua kota.
 - Setelah selesai, program akan menentukan rute optimal dengan menelusuri kembali (backtrack) jalur dari kota akhir ke kota awal.
-- Program mencetak perhitungan tiap tahap, seperti `f(i, S)`, lengkap dengan rute optimal dan bobot minimal.
+- Program mencetak perhitungan tiap tahap, seperti `f(i, S)`, serta mencetak rute optimal dan bobot minimal.
 
 ---
 
