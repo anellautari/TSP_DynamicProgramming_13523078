@@ -5,15 +5,19 @@ Program ini menyelesaikan permasalahan **Travelling Salesman Problem (TSP)** men
 
 ## Cara Kerja Program
 
-TSP adalah masalah pencarian rute minimum untuk mengunjungi setiap kota **sekali saja**, lalu kembali ke kota asal. Program ini menyelesaikan TSP dengan:
+TSP (Travelling Salesman Problem) adalah masalah pencarian rute minimum untuk mengunjungi setiap kota **sekali saja**, lalu kembali ke kota asal. Program ini menyelesaikan TSP menggunakan pendekatan **Dynamic Programming Bottom-Up**.
 
-- Membangun fungsi `tsp(distance)` yang menerima **matriks jarak antar kota** sebagai input.
-- Menggunakan **bitmasking** untuk merepresentasikan kumpulan kota yang telah dikunjungi.
-- Menggunakan **memoization** (caching hasil) untuk mempercepat pencarian solusi optimal secara rekursif.
-- Setelah menemukan jarak minimum, program juga merekonstruksi dan menampilkan **rute tur optimal**.
+Langkah-langkah utama program:
 
-Contoh DP state:
-- `dp(i, S)` = jarak minimum dari kota `i`, setelah mengunjungi semua kota dalam himpunan `S`, lalu kembali ke kota awal.
+- Membangun fungsi `tsp_bottom_up(distance)` yang menerima **matriks jarak antar kota** sebagai input.
+- Menggunakan **bitmasking** untuk merepresentasikan kombinasi subset kota yang telah dikunjungi.
+- Menyusun tabel `dp[i][mask]`, di mana:
+  - `i` adalah kota terakhir yang dikunjungi,
+  - `mask` adalah subset kota yang telah dikunjungi (dalam bentuk bitmask),
+  - `dp[i][mask]` menyimpan **jarak minimum** dari kota awal ke `i` sambil mengunjungi semua kota dalam `mask`, lalu kembali ke asal.
+- Mengisi `dp` secara **bertingkat**, mulai dari subset kecil hingga semua kota (urutan sesuai tahap di slide).
+- Setelah selesai, program akan menentukan rute optimal dengan **menelusuri kembali** (backtrack) jalur dari kota akhir ke kota awal.
+- Program mencetak **perhitungan tiap tahap** seperti `f(i, S)`, lengkap dengan komponen biaya dan pemilihan minimum, mirip dengan yang ditampilkan pada slide presentasi kuliah.
 
 ---
 
@@ -42,11 +46,7 @@ Contoh DP state:
     20 25 30 0
     ```
 
-4. **Output yang ditampilkan**:
-    - Jarak/biaya minimum untuk mengunjungi semua kota.
-    - Rute tur optimal yang harus diambil.
-    contoh output:
-    ```
-    Biaya minimum untuk mengunjungi semua kota: 35
-    Rute yang harus diambil: 1 -> 2 -> 4 -> 3 -> 1
-    ```
+## Ilustrasi Proses
+Berikut adalah hasil output dari program yang menunjukkan langkah-langkah penyelesaian TSP:
+![Output Program (1)](test/output_1.png)
+![Output Program (2)](test/output_2.png)
