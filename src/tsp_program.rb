@@ -2,7 +2,7 @@ def mask_to_set(mask, n)
   (0...n).select { |i| (mask & (1 << i)) != 0 }
 end
 
-def tsp_bottom_up(distance)
+def tsp_program(distance)
   n = distance.size
   inf = Float::INFINITY
 
