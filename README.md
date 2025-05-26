@@ -17,10 +17,7 @@ Contoh DP state:
 
 ---
 
-
----
-
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 1. **Install Ruby** (jika belum):
    - Windows: [https://rubyinstaller.org/](https://rubyinstaller.org/)
@@ -34,7 +31,7 @@ Contoh DP state:
     ruby src/main.rb
     ```
 
-3. **Masukkan input sesuai intruksi** contoh:
+3. **Masukkan input sesuai instruksi**, contoh:
     ```
     Masukkan jumlah kota:
     4
@@ -46,7 +43,7 @@ Contoh DP state:
     ```
 
 4. **Output yang ditampilkan**:
-    - Jarak minimum untuk mengunjungi semua kota.
+    - Jarak/biaya minimum untuk mengunjungi semua kota.
     - Rute tur optimal yang harus diambil.
     contoh output:
     ```
